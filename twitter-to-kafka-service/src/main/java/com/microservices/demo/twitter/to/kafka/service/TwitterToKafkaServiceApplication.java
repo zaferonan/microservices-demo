@@ -1,7 +1,8 @@
 package com.microservices.demo.twitter.to.kafka.service;
 
 import com.microservices.demo.config.TwitterToKafkaServiceConfigData;
-import com.microservices.demo.twitter.to.kafka.service.runner.StreamRunner;
+import com.microservices.demo.twitter.to.kafka.service.init.IStreamInitializer;
+import com.microservices.demo.twitter.to.kafka.service.runner.IStreamRunner;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -18,9 +19,10 @@ import java.util.Arrays;
 public class   TwitterToKafkaServiceApplication implements CommandLineRunner {
 
 
-    private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
-    private final StreamRunner streamRunner;
 
+    private final IStreamRunner streamRunner;
+
+    private final IStreamInitializer streamInitializer;
 
 
     public static void main(String[] args) {
@@ -30,9 +32,7 @@ public class   TwitterToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("App starts...");
-        log.info(twitterToKafkaServiceConfigData.getWellcomeMessage());
-        log.info(twitterToKafkaServiceConfigData.getTwitterV2BearerToken());
-        log.info(Arrays.toString(twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[0])));
+        streamInitializer.init();
         streamRunner.start();
     }
 }

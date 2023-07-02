@@ -1,7 +1,7 @@
 package com.microservices.demo.twitter.to.kafka.service.runner.impl;
 
 import com.microservices.demo.config.TwitterToKafkaServiceConfigData;
-import com.microservices.demo.twitter.to.kafka.service.runner.StreamRunner;
+import com.microservices.demo.twitter.to.kafka.service.runner.IStreamRunner;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -18,7 +18,7 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor
 @ConditionalOnExpression("${twitter-to-kafka-service.enable-v2-tweets} && not ${twitter-to-kafka-service.enable-mock-tweets}")
-public class TwitterV2KafkaStreamRunner implements StreamRunner {
+public class TwitterV2KafkaStreamRunner implements IStreamRunner {
 
     private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
 
