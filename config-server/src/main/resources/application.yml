@@ -13,13 +13,13 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/*****/spring-cloud-config-server-repository.git
+          uri: https://github.com/zaferonan/spring-cloud-config-server-repository.git
           default-label: main
-          username: **your_github_username**
-          password: **your_github_Pass**
+          username: zaferonan
+          password: ENC(pR+T9E5OPhVEeYh5v2mnT8elES0we/gfMTa+8ZRswJ7/1TLm/a1H5H2Ji88mg6ddRcikJVfZNiqFWItfS1ckpbm7BFCiJGIrANdIVlx8n0c=)
           clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: 1234
+      password: ENC(sJk8VTGrn61cZtNT/nDLjtK69c8XOz/X/Ue56qtxXCD9dJCZDO+Ml9E7we2mCjSm)
