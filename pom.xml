@@ -11,6 +11,9 @@
         <module>kafka/kafka-producer</module>
         <module>common-config</module>
         <module>config-server</module>
+        <module>kafka/kafka-consumer</module>
+        <module>kafka-to-elastic-service</module>
+        <module>elastic</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -39,6 +42,7 @@
         <spring-cloud.version>3.1.4</spring-cloud.version>
         <spring-cloud-dependencies.version>2021.0.4</spring-cloud-dependencies.version>
         <jasypt.version>3.0.3</jasypt.version>
+        <elastic.version>7.17.4</elastic.version>
 
     </properties>
 
@@ -76,6 +80,26 @@
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-index-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!---->
@@ -212,6 +236,23 @@
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-spring-boot</artifactId>
                 <version>${jasypt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elastic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elastic.version}</version>
             </dependency>
 
 
