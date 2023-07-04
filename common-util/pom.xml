@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>elastic</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>elastic-model</module>
-        <module>elastic-config</module>
-        <module>elastic-index-client</module>
-        <module>elastic-query-client</module>
-    </modules>
+    <artifactId>common-util</artifactId>
+
 
 </project>
