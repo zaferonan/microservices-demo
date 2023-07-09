@@ -13,7 +13,7 @@ public class JasyptPasswordEncryptor {
         encryptor.setPassword("password_encryptor!");
         encryptor.setAlgorithm("PBEWithHMACSHA512AndAES_256");
         encryptor.setIvGenerator(new RandomIvGenerator());
-        String result=encryptor.encrypt("testPass");
+        String result=encryptor.encrypt("e4d62c09-076f-4e2a-acd1-8159b9999293");
         System.out.println("Encrypted Pass = "+result);
         System.out.println("Orginal Pass = "+encryptor.decrypt(result));
     }

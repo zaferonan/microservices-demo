@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: kafka-streams-service
+  profiles:
+    active: kafka_streams
+  config:
+    import: 'configserver:'
+  cloud:
+    config:
+      name: kafka-streams-service,config-client
+      uri: http://localhost:8888
+      username: spring_cloud_user
+      password: testPass
